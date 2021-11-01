@@ -20,13 +20,19 @@ class GroupStudyController extends Controller
     public function InsertGroupStudy(Request $request)
     {
         # code...
+        $courseID = $request->input('courseID');
+        $description = $request->input('details');
+        $stime = $request->input('stime');
+        $etime = $request->input('etime');
+        $data = array(
+            "UserID" => 1,
+            "CourseID" => $courseID,
+            "GroupStudyDescription" => $description,
+            "GroupStudyStartTime" => $stime,
+            "GroupStudyEndTime" => $etime
+        );
 
-        $grpstudy = new GroupStudy();
-        $grpstudy->CourseID = $request->courseID;
-        $grpstudy->GroupStudyDescription = $request->details;
-        $grpstudy->GroupStudyStartTime = $request->stime;
-        $grpstudy->GroupStudyEndTime = $request->etime;
-        $grpstudy->save();
+        DB::table('groupstudy')->insert($data);
         $item = DB::table('groupstudy')->get();
         return view('groupstudy.viewgroupstudy', compact('item'));
     }

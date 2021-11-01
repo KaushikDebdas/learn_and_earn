@@ -21,7 +21,7 @@
       <div class="row mt-5">
         <div class="col-md-7">
           <!-- Form itself -->
-          <form action="groupstudy" method="post">
+          <form action="insert" method="post">
             {{csrf_field()}}
             <div class="form-group">
               <!-- Select Courses -->

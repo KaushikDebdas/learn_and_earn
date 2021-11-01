@@ -9,8 +9,8 @@
       <!-- left column -->
       <div class="col-md-3">
         <div class="text-center">
-          <img src="//placehold.it/100" class="avatar img-circle" name="" alt="avatar">
-          <h6>Upload a different photo...</h6>
+          <img class="profile-img" src="upload_images/{{ Session::get('image') }}" name="" alt="avatar">
+          
           
           <input type="file" class="form-control">
         </div>
@@ -26,6 +26,7 @@
         <h3>Personal info</h3>
         
         <form class="form-horizontal" role="form">
+
           <div class="form-group">
             <label class="col-lg-3 control-label">Full Name:</label>
             <div class="col-lg-8">
