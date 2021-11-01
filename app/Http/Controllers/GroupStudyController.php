@@ -41,6 +41,7 @@ class GroupStudyController extends Controller
     {
         # code...
         $item = DB::table('groupstudy')->get();
-        return view('groupstudy.viewgroupstudy', compact('item'));
+        $subjects = DB::table('course')->get();
+        return view('groupstudy.viewgroupstudy', compact('item','subjects'));
     }
 }
