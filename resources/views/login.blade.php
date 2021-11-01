@@ -28,7 +28,8 @@
             
             @if(isset($msg))
             <div>
-              <p>{{ $msg }}</p>
+              <br>
+              <p class="text-danger">{{ $msg }}</p>
             </div>
             @endif
               
