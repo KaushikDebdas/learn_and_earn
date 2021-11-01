@@ -25,6 +25,13 @@
                 <input class="loginInput" type="password" name="password" placeholder="Type your password" required>
               </div>
             </div>
+            
+            @if(isset($msg))
+            <div>
+              <p>{{ $msg }}</p>
+            </div>
+            @endif
+              
             <div class="row mt-5">
               <ul class="list-unstyled">
                 <li>

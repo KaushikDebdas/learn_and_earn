@@ -21,14 +21,20 @@
       <div class="row mt-5">
         <div class="col-md-7">
           <!-- Form itself -->
-          <form action="#" method="post">
-
+          <form action="groupstudy" method="post">
+            {{csrf_field()}}
             <div class="form-group">
               <!-- Select Courses -->
               <label for="exampleFormControlSelect1" class="fw-bold">Select Course</label>
               <select class="form-control mt-3" id="exampleFormControlSelect1" name="courseID">
                 <option>--Select One--</option>
-                <option value=""></option>
+                <option value="1">SPL (CSI - 121)</option>
+                <option value="2">Elementary Calculus (MATH - 003)</option>
+                <option value="3">Digital Logic Design (CSE - 225)</option>
+                <option value="4">Physics (PHY - 105)</option>
+                <option value="5">Financial Accounting I (ACN - 1205)</option>
+                <option value="6">Strategic Marketing (MKT - 4204)</option>
+                <option value="7">Engineering Electromagnetics (EEE - 3305)</option>
               </select>
             </div>
             <!-- Topic & Details -->
@@ -44,8 +50,6 @@
               <br>
               <label for="exampleFormControlSelect1" class="fw-bold mt-3">Pick End Time:</label><br>
               <input class="mt-3" type="datetime-local" name="etime" placeholder="Enter End Date and time" required>
-              <button type="addtime" class="btn btn-primary" name="TimeAdd"
-                style="background-color: #0c4270; padding: 5px 5px;">+</button>
             </div>
             <br>
             <!-- Button -->

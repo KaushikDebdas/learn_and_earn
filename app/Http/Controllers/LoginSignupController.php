@@ -33,6 +33,9 @@ class LoginSignupController extends Controller
             $username = $request->session()->get('username');
             return view('index', compact('username'));
         }
+        $msg = "Login Failed";
+        return view('login',compact('msg'));
+        
 
     }
 

@@ -29,7 +29,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-5">
-                                <img class="profile-img" src="{{  Session::get('image') }} ">
+                                <img class="profile-img" src=" upload_images/{{ Session::get('image') }} " >
                             </div>
                             <div class="col-md-7">
                               <ul class="profile-details">

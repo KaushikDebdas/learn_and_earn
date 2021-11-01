@@ -40,6 +40,7 @@ Route::post('usersignup', 'LoginSignupController@Register')->name('usersignup');
 
 // Group Study 
 Route::get('groupstudy/create','GroupStudyController@CreateGroupStudy')->name('creategroupstudy');
+Route::post('groupstudy','GroupStudyController@InsertGroupStudy')->name('groupstudy');
 Route::get('groupstudy/view','GroupStudyController@ViewGroupStudy')->name('viewgroupstudy');
 
 // Tuition 

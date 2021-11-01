@@ -69,8 +69,8 @@
             </li>
             @else
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="{{  Session::get('image') }}" id="navbarScrollingDropdown" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user-circle"></i></a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false"><img src="upload_images/{{ Session::get('image') }}" alt="{{ Session::get('username') }}"></a>
                 <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                     <li><a class="dropdown-item" href="{{ route('personalinformation') }}">Profile</a></li>
                     <li><a class="dropdown-item" href="{{ route('updateprofile') }}">Settings</a></li>

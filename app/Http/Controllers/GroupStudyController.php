@@ -17,6 +17,20 @@ class GroupStudyController extends Controller
         return view('groupstudy.creategroupstudy', compact('item'));
     }
     //
+    public function InsertGroupStudy(Request $request)
+    {
+        # code...
+
+        $grpstudy = new GroupStudy();
+        $grpstudy->CourseID = $request->courseID;
+        $grpstudy->GroupStudyDescription = $request->details;
+        $grpstudy->GroupStudyStartTime = $request->stime;
+        $grpstudy->GroupStudyEndTime = $request->etime;
+        $grpstudy->save();
+        $item = DB::table('groupstudy')->get();
+        return view('groupstudy.viewgroupstudy', compact('item'));
+    }
+    //
     public function ViewGroupStudy()
     {
         # code...

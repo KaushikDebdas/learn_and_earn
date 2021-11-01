@@ -453,6 +453,8 @@ h3.menu-title{
 
 .profile-img{
   width: 200px;
+  height: 300px;
+  max-height: 100%;
   max-width: 100%;
   padding: 0 10%;
   border-radius: 15%;
