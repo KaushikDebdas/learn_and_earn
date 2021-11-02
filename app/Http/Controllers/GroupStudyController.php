@@ -25,7 +25,7 @@ class GroupStudyController extends Controller
         $stime = $request->input('stime');
         $etime = $request->input('etime');
         $data = array(
-            "UserID" => 1,
+            "UserID" =>Session()->get('id'),
             "CourseID" => $courseID,
             "GroupStudyDescription" => $description,
             "GroupStudyStartTime" => $stime,

@@ -20,7 +20,7 @@
               <br>
               <label for="exampleFormControlSelect1" style="font-size: 17px;">Preference
                 Gender</label>
-              <select class="form-control" id="exampleFormControlSelect1" name="ge">
+              <select class="form-control" id="exampleFormControlSelect1" name="gen">
                 <option value="%">--Select One--</option>
                 <option value="%">Any</option>
                 <option value="Male">Male</option>
@@ -44,55 +44,27 @@
             <br>
           </form>
         </div>
+        <!-- Post For Tutor -->
+        
         <div class="col-md-7 offset-1">
+          @foreach($item as $row)
           <div class="card mt-5">
             <div class="card-body">
               <h3 class="card-title">Tutor Needed</h3>
-              <p>Departments: CSE</p>
-              <p class="card-text">Topic Description :</p>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              @foreach($subjects as $sub)
+                @if ($sub->ID == $row->CourseID)
+                <p>Course Name: {{ $sub->CourseName }}</p>
+                @endif
+              @endforeach
+              <p>Topic Description : </p>
+              <p class="card-text">{{ $row->PostDescription }}</p>
               <p> Interested Members:</p>
-              <p>Start Time:</p>
-              <p>End Time:</p>
+              <p>Start Time: {{ $row->SelectedStartTime }}</p>
+              <p>End Time: {{ $row->SelectedEndTime }}</p>
               <a href="#" class="btn submitbtn">Enroll</a>
             </div>
           </div>
-          <div class="card mt-5">
-            <div class="card-body">
-              <h3 class="card-title">Tutor Needed</h3>
-              <p>Departments: CSE</p>
-              <p class="card-text">Topic Description :</p>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <p> Interested Members:</p>
-              <p>Start Time:</p>
-              <p>End Time:</p>
-              <a href="#" class="btn submitbtn">Enroll</a>
-            </div>
-          </div>
-          <div class="card mt-5">
-            <div class="card-body">
-              <h3 class="card-title">Tutor Needed</h3>
-              <p>Departments: CSE</p>
-              <p class="card-text">Topic Description :</p>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <p> Interested Members:</p>
-              <p>Start Time:</p>
-              <p>End Time:</p>
-              <a href="#" class="btn submitbtn">Enroll</a>
-            </div>
-          </div>
-          <div class="card mt-5">
-            <div class="card-body">
-              <h3 class="card-title">Tutor Needed</h3>
-              <p>Departments: CSE</p>
-              <p class="card-text">Topic Description :</p>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <p> Interested Members:</p>
-              <p>Start Time:</p>
-              <p>End Time:</p>
-              <a href="#" class="btn submitbtn">Enroll</a>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
 

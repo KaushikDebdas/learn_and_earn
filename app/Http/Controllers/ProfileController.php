@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\User;
+use Illuminate\Contracts\Session\Session;
 
 class ProfileController extends Controller
 {
@@ -15,6 +18,11 @@ class ProfileController extends Controller
     public function ProfileUpdate()
     {
         # code...
-        return view('dashboardprofile.updateprofile');
+        $username = Session()->get('username');
+
+        $user = DB::table('user')->where([
+            ['FullName', $username]
+        ])->first();
+        return view('dashboardprofile.updateprofile',compact('user'));
     }
 }

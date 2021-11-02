@@ -19,14 +19,16 @@ class TuitionController extends Controller
     public function InsertTuition(Request $request)
     {
         # code...
+        $courseID = $request->input('courseID');
         $description = $request->input('details');
         $stime = $request->input('stime');
         $etime = $request->input('etime');
         $payment = $request->input('payment');
         $gender = $request->input('gender');
         $data = array(
-            "UserID" => 1,
-            "Post'sDescription" => $description,
+            "UserID" =>Session()->get('id'),
+            "CourseID" => $courseID,
+            "PostDescription" => $description,
             "SelectedStartTime" => $stime,
             "SelectedEndTime" => $etime,
             "Payment" => $payment,
@@ -34,16 +36,17 @@ class TuitionController extends Controller
         );
 
         DB::table('post')->insert($data);
-        $item = DB::table('post')->get();
-        return view('tuition.viewtuition', compact('item'));
+        $item = DB::table('post') ->orderBy('PostDateTime', 'desc')->get();
+        $subjects = DB::table('course')->get();
+        return view('tuition.viewtuition',compact('item','subjects'));
     }
     // View
     public function ViewTuition()
     {
         # code...
-        // $item = DB::table('groupstudy')->get();
-        // $subjects = DB::table('course')->get();
-        // return view('tuition.viewtuition',compact('item','subjects'));
+        $item = DB::table('post') ->orderBy('PostDateTime', 'desc')->get();
+        $subjects = DB::table('course')->get();
+        return view('tuition.viewtuition',compact('item','subjects'));
     }
     // Confirm
     public function ConfirmTuition()

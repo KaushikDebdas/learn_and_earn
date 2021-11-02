@@ -9,7 +9,7 @@
       <!-- left column -->
       <div class="col-md-3">
         <div class="text-center">
-          <img class="profile-img" src="upload_images/{{ Session::get('image') }}" name="" alt="avatar">
+          <img class="profile-img" src="{{ public_path() }}\upload_images\{{ Session::get('image') }}" name="" alt="avatar">
           
           
           <input type="file" class="form-control">
@@ -30,7 +30,7 @@
           <div class="form-group">
             <label class="col-lg-3 control-label">Full Name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" name="Fullname" placeholder="Enter Full Name"><br>
+              <input class="form-control" type="text" name="Fullname" placeholder="Enter Full Name" value="{{ $user->FullName }}"><br>
             </div>
           </div>
           <div class="form-group">
