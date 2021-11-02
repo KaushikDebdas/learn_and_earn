@@ -44,9 +44,10 @@ Route::post('groupstudy/insert','GroupStudyController@InsertGroupStudy')->name('
 Route::get('groupstudy/view','GroupStudyController@ViewGroupStudy')->name('viewgroupstudy');
 
 // Tuition 
-Route::get('tuition/create','tuitionController@Createtuition')->name('createtuition');
-Route::get('tuition/view','tuitionController@Viewtuition')->name('viewtuition');
-Route::get('tuition/confirm','tuitionController@ConfirmTuition')->name('confirmtuition');
+Route::get('tuition/create','TuitionController@CreateTuition')->name('createtuition');
+Route::post('tuition/insert','TuitionController@InsertTuition')->name('insert');
+Route::get('tuition/view','TuitionController@ViewTuition')->name('viewtuition');
+Route::get('tuition/confirm','TuitionController@ConfirmTuition')->name('confirmtuition');
 
 // Notes 
 Route::get('notes','NotesController@notes')->name('notes');

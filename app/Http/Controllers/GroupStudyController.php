@@ -9,14 +9,14 @@ use App\Models\Course;
 
 class GroupStudyController extends Controller
 {
-    //
+    // Create
     public function CreateGroupStudy()
     {
         # code...
         $item = DB::table('course')->get();
         return view('groupstudy.creategroupstudy', compact('item'));
     }
-    //
+    // Insert
     public function InsertGroupStudy(Request $request)
     {
         # code...
@@ -36,7 +36,7 @@ class GroupStudyController extends Controller
         $item = DB::table('groupstudy')->get();
         return view('groupstudy.viewgroupstudy', compact('item'));
     }
-    //
+    // View
     public function ViewGroupStudy()
     {
         # code...
