@@ -15,6 +15,7 @@ class ProfileController extends Controller
         # code...
         return view('dashboardprofile.personalinformation');
     }
+    // Profile Update
     public function ProfileUpdate()
     {
         # code...
@@ -26,12 +27,22 @@ class ProfileController extends Controller
         ])->first();
         return view('dashboardprofile.updateprofile',compact('user'));
     }
+    // Requested Post
     public function RequestedPost()
     {
         # code...
-        $item = DB::table('groupstudy')->get();
-        $item_post = DB::table('post')->get();
+        $item = DB::table('groupstudy')->where([['UserID',Session()->get('id')]])->get();
+        $item_post = DB::table('post')->where([['UserID',Session()->get('id')]])->get();
         $subjects = DB::table('course')->get();
         return view('dashboardprofile.requestedpost',compact('item','subjects','item_post'));
+    }
+    // As a Tutor
+    public function AsTutor()
+    {
+        # code...
+        $item = DB::table('groupstudy')->where([['UserID',Session()->get('id')]])->get();
+        $item_post = DB::table('post')->where([['UserID',Session()->get('id')]])->get();
+        $subjects = DB::table('course')->get();
+        return view('dashboardprofile.astutor',compact('item','subjects','item_post'));
     }
 }

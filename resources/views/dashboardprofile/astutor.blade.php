@@ -14,11 +14,11 @@
                                     <div class="navbar-nav flex-column">
                                         <a class="nav-link" href="{{ route('personalinformation') }}">Personal
                                             Information</a>
-                                        <a class="nav-link active confirmed_tution-link"
+                                        <a class="nav-link"
                                             href="{{ route('requestedpost') }}">Requested posts</a>
                                         <a class="nav-link" href="{{ route('confirmtuition') }}">Confirmed
                                             Tuitions</a>
-                                        <a class="nav-link" href="{{ URL::to('undermaintanance') }}">As a Tutor</a>
+                                        <a class="nav-link active confirmed_tution-link" href="{{ route('astutor') }}">As a Tutor</a>
                                     </div>
                                 </div>
                             </nav>
@@ -32,16 +32,16 @@
                     @foreach ($item as $row)
                         <div class="card mt-5">
                             <div class="card-body">
-                                <h2 class="card-title" style="text-align:center;"><span>GROUP STUDY</span></h2>
+                                <h2 class="card-title" style="text-align:center;"><span>As a Tutor</span></h2>
                                 <hr><br>
                                 @foreach ($subjects as $sub)
                                     @if ($sub->ID == $row->CourseID)
-                                        <p>Course Name: {{ $sub->CourseName }}</p>
+                                        <p>Course Name: <span>{{ $sub->CourseName }}</span></p>
                                     @endif
                                 @endforeach
-                                <p>Topic Description : </p>
+                                <p>Topic Description: </p>
                                 <p class="card-text">{{ $row->GroupStudyDescription }}</p>
-                                <p> Interested Members:</p>
+                                <p>Interested Members: </p>
                                 <p>Start Time: {{ $row->GroupStudyStartTime }}</p>
                                 <p>End Time: {{ $row->GroupStudyEndTime }}</p>
                                 <a href="#" class="btn submitbtn">Enroll</a>

@@ -51,15 +51,21 @@
               <h3 class="card-title">TUTOR NEEDED</h3><hr>
               @foreach($subjects as $sub)
                 @if ($sub->ID == $row->CourseID)
-                <p>Course Name: {{ $sub->CourseName }}</p>
+                <p>Course Name: <span>{{ $sub->CourseName }}</span> </p>
                 @endif
               @endforeach
-              <p>Topic Description : </p>
+              <p>Topic Description: </p>
               <p class="card-text">{{ $row->PostDescription }}</p>
-              <p> Interested Members:</p>
+              <p>Interested Members: <span class="data-highlighted">{{ $row->InterestedStudents }}</span> </p>
+              <p>Payment: {{ $row->Payment }}</p>
+              <p>Gender: {{ $row->Gender }}</p>
               <p>Start Time: {{ $row->SelectedStartTime }}</p>
               <p>End Time: {{ $row->SelectedEndTime }}</p>
-              <a href="#" class="btn submitbtn">Enroll</a>
+              <form action="enrollpost" method="post">
+                @csrf
+                <input type="hidden" name="postid" value="{{ $row->ID }}">
+                <input type="submit" class="btn submitbtn" value="Enroll">
+            </form>
             </div>
           </div>
           @endforeach

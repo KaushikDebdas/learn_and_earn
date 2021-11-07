@@ -18,7 +18,7 @@
                                             href="{{ route('requestedpost') }}">Requested posts</a>
                                         <a class="nav-link" href="{{ route('confirmtuition') }}">Confirmed
                                             Tuitions</a>
-                                        <a class="nav-link" href="{{ URL::to('undermaintanance') }}">As a Tutor</a>
+                                        <a class="nav-link" href="{{ route('astutor') }}">As a Tutor</a>
                                     </div>
                                 </div>
                             </nav>
@@ -39,9 +39,9 @@
                                         <p>Course Name: {{ $sub->CourseName }}</p>
                                     @endif
                                 @endforeach
-                                <p>Topic Description : </p>
+                                <p>Topic Description: </p>
                                 <p class="card-text">{{ $row->GroupStudyDescription }}</p>
-                                <p> Interested Members:</p>
+                                <p> Interested Members: <span class="data-highlighted">{{ $row->InterestedStudents }}</span></p>
                                 <p>Start Time: {{ $row->GroupStudyStartTime }}</p>
                                 <p>End Time: {{ $row->GroupStudyEndTime }}</p>
                                 <a href="#" class="btn submitbtn">Enroll</a>
@@ -63,7 +63,7 @@
                                 @endforeach
                                 <p>Topic Description : </p>
                                 <p class="card-text">{{ $row->PostDescription }}</p>
-                                <p> Interested Members:</p>
+                                <p> Interested Members: <span class=""></span> {{ $row->InterestedStudents }}</p>
                                 <p>Start Time: {{ $row->SelectedStartTime }}</p>
                                 <p>End Time: {{ $row->SelectedEndTime }}</p>
                                 <a href="#" class="btn submitbtn">Enroll</a>

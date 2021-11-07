@@ -70,7 +70,7 @@
             </div>
             <br>
             <!-- Button Add -->
-            <button type="submit" class="btn submitbtn" name="tuitionpost">Post For Tution</button>
+            <button type="submit" class="btn submitbtn" name="tuitionpost">POST</button>
             <br>
           </form>
         </div>

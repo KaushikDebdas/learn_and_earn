@@ -15,7 +15,7 @@
                           <a class="nav-link" href="{{ route('personalinformation') }}">Personal Information</a>
                           <a class="nav-link" href="{{ route('requestedpost') }}">Requested posts</a>
                           <a class="nav-link active confirmed_tution-link" href="{{ route('confirmtuition') }}">Confirmed Tuitions</a>
-                          <a class="nav-link" href="{{ URL::to('undermaintanance') }}">As a Tutor</a>
+                          <a class="nav-link" href="{{ route('astutor') }}">As a Tutor</a>
                         </div>
                       </div>
                     </nav>
@@ -30,7 +30,7 @@
                             <div class="col-md-12">
                             <p class="time">11:00AM</p>
                               <ul class="profile-details confirmed_tution_details-inline">
-                                  <li>DEPARTMENT <span class="data-highlighted">CSE</span></li>
+                                  <li>DEPARTMENT :<span class="data-highlighted">CSE</span></li>
                                   <li>Gender :<span class="data-highlighted">Male</span> </li>
                               </ul>
                               <div class="topic_description">

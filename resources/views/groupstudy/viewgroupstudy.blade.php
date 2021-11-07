@@ -17,15 +17,20 @@
                                 <h3 class="card-title">GROUP STUDIES</h3><hr>
                                 @foreach ($subjects as $sub)
                                     @if ($sub->ID == $row->CourseID)
-                                        <p>Course Name: {{ $sub->CourseName }}</p>
+                                        <p>Course Name: <span>{{ $sub->CourseName }}</span></p>
                                     @endif
                                 @endforeach
                                 <p>Topic Description : </p>
                                 <p class="card-text">{{ $row->GroupStudyDescription }}</p>
-                                <p> Interested Members:</p>
+                                <p>Interested Members: <span class="data-highlighted">{{ $row->InterestedStudents }}</span> </p>
                                 <p>Start Time: {{ $row->GroupStudyStartTime }}</p>
                                 <p>End Time: {{ $row->GroupStudyEndTime }}</p>
-                                <a href="#" class="btn submitbtn">Enroll</a>
+                                <form action="enrollgroupstudy" method="post">
+                                    @csrf
+                                    <input type="hidden" name="groupstudyid" value="{{ $row->ID }}">
+                                    <input type="submit" class="btn submitbtn" value="Enroll">
+                                </form>
+                                
                             </div>
                         </div>
                     </div>

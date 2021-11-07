@@ -17,7 +17,7 @@
                           <a class="nav-link active livechat-link" href="{{ route('personalinformation') }}">Personal Information</a>
                           <a class="nav-link" href="{{ route('requestedpost') }}">Requested posts</a>
                           <a class="nav-link" href="{{ route('confirmtuition') }}">Confirmed Tuitions</a>
-                          <a class="nav-link" href="{{ URL::to('undermaintanance') }}">As a Tutor</a>
+                          <a class="nav-link" href="{{ route('astutor') }}">As a Tutor</a>
                         </div>
                       </div>
                     </nav>

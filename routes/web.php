@@ -42,12 +42,14 @@ Route::post('usersignup', 'LoginSignupController@Register')->name('usersignup');
 Route::get('groupstudy/create','GroupStudyController@CreateGroupStudy')->name('creategroupstudy');
 Route::post('groupstudy/insert','GroupStudyController@InsertGroupStudy')->name('insert');
 Route::get('groupstudy/view','GroupStudyController@ViewGroupStudy')->name('viewgroupstudy');
+Route::post('groupstudy/enrollgroupstudy','GroupStudyController@EnrollGroupStudy')->name('enrollgroupstudy');
 
 // Tuition 
 Route::get('tuition/create','TuitionController@CreateTuition')->name('createtuition');
 Route::post('tuition/insert','TuitionController@InsertTuition')->name('insert');
 Route::get('tuition/view','TuitionController@ViewTuition')->name('viewtuition');
 Route::get('tuition/confirm','TuitionController@ConfirmTuition')->name('confirmtuition');
+Route::post('tuition/enrollpost','TuitionController@EnrollTuition')->name('enrollpost');
 
 // Notes 
 Route::get('notes','NotesController@notes')->name('notes');
@@ -56,6 +58,7 @@ Route::get('notes','NotesController@notes')->name('notes');
 Route::get('personalinformation','ProfileController@Profile')->name('personalinformation');
 Route::get('profile/update','ProfileController@ProfileUpdate')->name('updateprofile');
 Route::get('profile/requestedpost','ProfileController@RequestedPost')->name('requestedpost');
+Route::get('profile/astutor','ProfileController@AsTutor')->name('astutor');
 // Requested Post
 // Route::get('/requestedpost', function () {
 //     return view('requestedpost');
