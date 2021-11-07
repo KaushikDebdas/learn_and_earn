@@ -55,3 +55,8 @@ Route::get('notes','NotesController@notes')->name('notes');
 // Profile Page
 Route::get('personalinformation','ProfileController@Profile')->name('personalinformation');
 Route::get('profile/update','ProfileController@ProfileUpdate')->name('updateprofile');
+Route::get('profile/requestedpost','ProfileController@RequestedPost')->name('requestedpost');
+// Requested Post
+// Route::get('/requestedpost', function () {
+//     return view('requestedpost');
+// });

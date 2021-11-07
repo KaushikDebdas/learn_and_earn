@@ -6,6 +6,7 @@
 <section class="mt-5">
     <div class="container profile">
         <div class="row">
+          <!-- Start Dashboard Side column -->
             <div class="col-md-4">
               <h3 class="menu-title">My Dashboard</h3>
                 <div class="card  live-chat-menu" >
@@ -14,7 +15,7 @@
                       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav flex-column">
                           <a class="nav-link active livechat-link" href="{{ route('personalinformation') }}">Personal Information</a>
-                          <a class="nav-link" href="{{ URL::to('undermaintanance') }}">Requested posts</a>
+                          <a class="nav-link" href="{{ route('requestedpost') }}">Requested posts</a>
                           <a class="nav-link" href="{{ route('confirmtuition') }}">Confirmed Tuitions</a>
                           <a class="nav-link" href="{{ URL::to('undermaintanance') }}">As a Tutor</a>
                         </div>
@@ -22,14 +23,14 @@
                     </nav>
                  </div>
                 </div>
-
             </div>
+            <!-- End Dashboard Side column -->
             <div class="col-md-5 mt-5 " style="">
                 <div class="card bg-white ">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-5">
-                                <img class="profile-img" src=" upload_images/{{ Session::get('image') }} " >
+                                <img class="profile-img" src=" upload_images/{{ Session::get('image') }}" alt="{{ Session::get('username') }}" >
                             </div>
                             <div class="col-md-7">
                               <ul class="profile-details">
