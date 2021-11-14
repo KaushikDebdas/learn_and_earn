@@ -1,5 +1,5 @@
 @extends('welcome')
-
+@section('title','As Tutor')
 @section('content')
 
     <section class="mt-5">
@@ -28,27 +28,36 @@
                 </div>
 
                 <div class="col-md-7 mt-5 group-study" style="margin-left: 5%;">
-                    <!--START My Group Studies Post -->
-                    @foreach ($item as $row)
-                        <div class="card mt-5">
-                            <div class="card-body">
-                                <h2 class="card-title" style="text-align:center;"><span>As a Tutor</span></h2>
-                                <hr><br>
-                                @foreach ($subjects as $sub)
-                                    @if ($sub->ID == $row->CourseID)
-                                        <p>Course Name: <span>{{ $sub->CourseName }}</span></p>
-                                    @endif
-                                @endforeach
-                                <p>Topic Description: </p>
-                                <p class="card-text">{{ $row->GroupStudyDescription }}</p>
-                                <p>Interested Members: </p>
-                                <p>Start Time: {{ $row->GroupStudyStartTime }}</p>
-                                <p>End Time: {{ $row->GroupStudyEndTime }}</p>
-                                <a href="#" class="btn submitbtn">Enroll</a>
-                            </div>
-                        </div>
-                    @endforeach
-                    <!--END My Group Studies Post -->
+                   <!--START My Tuition Post -->
+                   @foreach ($item_post as $row)
+                   <div class="card mt-5">
+                       <div class="card-body">
+                           <h2 class="card-title" style="text-align:center;"><span>As A Tutor</span></h2>
+                           <hr><br>
+                           @foreach ($subjects as $sub)
+                               @if ($sub->ID == $row->CourseID)
+                                   <p>Course Name: {{ $sub->CourseName }}</p>
+                               @endif
+                           @endforeach
+                           <p>Topic Description : </p>
+                           <p class="card-text">{{ $row->PostDescription }}</p>
+
+                           <p>Interested Tutors:
+                               @foreach (explode(',', $row->InterestedStudents) as $st)
+                                   <a href="{{ route('appoint', ['name'=>$st,'post_id'=>$row->ID]) }}" style="text-decoration: none"><span
+                                           class="data-highlighted">{{ $st }}</span></a>
+                                   @if (!$loop->last),@endif
+                               @endforeach
+
+                           </p>
+                           <p>Selected Tutor: <span class="data-highlighted">{{ $row->TutorName }}</span></p>
+
+                           <p>Start Time: {{ date('M j, Y h:ia', strtotime($row->SelectedStartTime)) }}</p>
+                           <p>End Time: {{ date('M j, Y h:ia', strtotime($row->SelectedEndTime)) }}</p>
+                       </div>
+                   </div>
+               @endforeach
+               <!--END My Tuition Post -->
                 </div>
             </div>
         </div>

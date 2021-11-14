@@ -34,7 +34,7 @@ class GroupStudyController extends Controller
         );
 
         DB::table('groupstudy')->insert($data);
-        $item = DB::table('groupstudy')->get();
+        $item = DB::table('groupstudy')->orderBy('GroupDateTime','desc')->get();
         $subjects = DB::table('course')->get();
         return view('groupstudy.viewgroupstudy', compact('item', 'subjects'));
     }
@@ -42,7 +42,7 @@ class GroupStudyController extends Controller
     public function ViewGroupStudy()
     {
         # code...
-        $item = DB::table('groupstudy')->get();
+        $item = DB::table('groupstudy')->orderBy('GroupDateTime','desc')->get();
         $subjects = DB::table('course')->get();
         return view('groupstudy.viewgroupstudy', compact('item', 'subjects'));
     }

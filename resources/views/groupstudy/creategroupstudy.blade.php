@@ -1,5 +1,5 @@
 @extends('welcome')
-
+@section('title','Create Group')
 @section('content')
 
 <!-- Create Group Study Title -->
@@ -53,7 +53,7 @@
             </div>
             <br>
             <!-- Button -->
-            <button type="submit" class="btn submitbtn">Create Group Study</button>
+            <button type="submit" class="btn submitbtn">Create</button>
             <br>
             
           </form>

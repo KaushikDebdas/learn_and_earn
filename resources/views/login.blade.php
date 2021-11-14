@@ -1,5 +1,7 @@
 @extends('welcome')
 
+@section('title','Log In')
+
 @section('content')
 
 <!-- login -->

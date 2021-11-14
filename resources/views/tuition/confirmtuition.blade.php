@@ -1,5 +1,5 @@
 @extends('welcome')
-
+@section('title','Confirm Tuition')
 @section('content')
 
 <section class="mt-5">
@@ -28,42 +28,46 @@
                     <div class="card-body detailed_confirmed_tution">
                         <div class="row">
                             <div class="col-md-12">
-                            <p class="time">11:00AM</p>
+                              @foreach ($item_post as $row)
+                              <p class="time">11:00AM</p>
+
                               <ul class="profile-details confirmed_tution_details-inline">
-                                  <li>DEPARTMENT :<span class="data-highlighted">CSE</span></li>
-                                  <li>Gender :<span class="data-highlighted">Male</span> </li>
+                                  <li>Gender: <span class="data-highlighted">{{ $row->Gender }}</span> </li>
                               </ul>
                               <div class="topic_description">
                                   <h5>Topic Description</h5>
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                                  <p>{{ $row->PostDescription }}</p>
                               </div>
                                <ul class="profile-details confirmed_tution_details">
-                                  <li>Salary :  <span class="data-highlighted">5000 Tk</span></li>
-                                  <li>Selected Tutor :
-                                  <span class="data-highlighted"> Md. Zahid Hossain</span> </li>
-                                  <li>Tution Type : <span class="data-highlighted">Topic Wise</span></li>
+                                  <li>Salary: <span class="data-highlighted">{{ $row->Payment }}</span></li>
+                                  <li>Selected Tutor:
+                                  <span class="data-highlighted">{{ $row->TutorName }}</span> </li>
                               </ul>
                                <ul class="profile-details confirmed_tution_details-inline">
-                                  <li>Start Time :  <span class="data-highlighted">05-04--2021 , 10:00 PM</span></li>
-                                  <li>End Time : <span class="data-highlighted">08-04--2021 , 10:00 PM</span></li>
+                                  <li>Start Time:  <span class="data-highlighted">{{ $row->SelectedStartTime }}</span></li>
+                                  <li>End Time: <span class="data-highlighted">{{ $row->SelectedEndTime }}</span></li>
                               </ul>
-
+                              <form action="submitbutton" method="post">
+                                @csrf
                               <div class="form-group"> 
-                                <textarea placeholder="Write revire here..." class="form-control" id="exampleFormControlTextarea1" rows="3" height="30"></textarea>
+                                <textarea placeholder="{{ $row->Comment }}" name="Comment"  class="form-control" id="exampleFormControlTextarea1" rows="3" height="30"></textarea>
                               </div>
 
                              <div class="form-group rating">
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                  <option>Overall Rating</option>
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
+                                <select class="form-control" id="exampleFormControlSelect1" name="Rating">
+                                  <option value="">{{ $row->Rating }}</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
                                 </select>
                               </div>
-                               <button type="submit" class="btn submitbtn">Submit</button>
+                                <input type="hidden" name="postid" value="{{ $row->ID }}">
+                                <input type="submit" class="btn submitbtn" value="Submit">
+                            </form>
+                              @endforeach
+                         
                           </div>
                         </div>
 

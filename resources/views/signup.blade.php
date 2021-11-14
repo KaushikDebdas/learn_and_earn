@@ -1,5 +1,7 @@
 @extends('welcome')
 
+@section('title','Sign Up')
+
 @section('content')
 
 <!-- Sign Up -->
@@ -14,7 +16,7 @@
             <div class="row">
                 <div class="col">
                   <p>Full Name <span>*</span></p>
-                  <input class="signUpInput" type="text" name="Fullname" placeholder="Type your full name" required>
+                  <input class="signUpInput" type="text" name="UserName" placeholder="Type your full name" required>
                 </div>
                 <div class="col">
                   <p>Phone Number <span>*</span></p>
@@ -58,10 +60,9 @@
                 <div class="col">
                   <p>Upload Profile Picture<span>*</span></p>
                   <input class="signUpInput" type="file" name="profile_image" placeholder="Type your password" required>
-                  <p class="end-text mb-4">By using this form you agree with the storage
-                    and handling of your data by this website.</p>
                   <ul class="list-unstyled">
                     <li>
+                      <br>
                       <input type="submit" class="loginSignInBtn" value="Register">
                     </li>
                     <li>

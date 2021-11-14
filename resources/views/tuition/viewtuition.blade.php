@@ -1,5 +1,7 @@
 @extends('welcome')
 
+@section('title','Find Tutor Post')
+
 @section('content')
 
 <!--  -->
@@ -10,11 +12,12 @@
         <div class="col-md-4">
           <!-- Filter Tutor -->
           <h3>Filter Tutor</h3>
-          <form action="#" method="post">
+          <form action="filter" method="post">
+            @csrf
             <div class="form-group">
               <label for="exampleFormControlSelect1" style="font-size: 17px;">Course</label>
               <select class="form-control" id="exampleFormControlSelect1" name="co">
-                <option>--Select One--</option>
+                <option value="">--Select One--</option>
                 <option value="1">SPL (CSI - 121)</option>
                 <option value="2">Elementary Calculus (MATH - 003)</option>
                 <option value="3">Digital Logic Design (CSE - 225)</option>
@@ -27,7 +30,7 @@
               <label for="exampleFormControlSelect1" style="font-size: 17px;">Preference
                 Gender</label>
               <select class="form-control" id="exampleFormControlSelect1" name="gen">
-                <option value="%">--Select One--</option>
+                <option value="">--Select One--</option>
                 <option value="Any">Any</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -35,7 +38,7 @@
               <br>
               <label for="exampleFormControlSelect1" style="font-size: 17px;">Salary</label>
               <input type="number" class="form-control" id="exampleInputPayment" aria-describedby="emailHelp"
-                placeholder="Payment" name="payment">
+                placeholder="Payment" name="pay">
             </div>
             <br>
             <button type="submit" class="btn btn-primary" name="filter">Find</button>
@@ -56,15 +59,15 @@
               @endforeach
               <p>Topic Description: </p>
               <p class="card-text">{{ $row->PostDescription }}</p>
-              <p>Interested Members: <span class="data-highlighted">{{ $row->InterestedStudents }}</span> </p>
+              <p>Interested Tutors: <span class="data-highlighted">{{ $row->InterestedStudents }}</span> </p>
               <p>Payment: {{ $row->Payment }}</p>
               <p>Gender: {{ $row->Gender }}</p>
-              <p>Start Time: {{ $row->SelectedStartTime }}</p>
-              <p>End Time: {{ $row->SelectedEndTime }}</p>
+              <p>Start Time: {{ date('M j, Y h:ia', strtotime($row->SelectedStartTime)) }}</p>
+              <p>End Time: {{ date('M j, Y h:ia', strtotime($row->SelectedEndTime)) }}</p>
               <form action="enrollpost" method="post">
                 @csrf
                 <input type="hidden" name="postid" value="{{ $row->ID }}">
-                <input type="submit" class="btn submitbtn" value="Enroll">
+                <input type="submit" class="btn submitbtn" value="Apply">
             </form>
             </div>
           </div>

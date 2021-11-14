@@ -1,5 +1,5 @@
 @extends('welcome')
-
+@section('title','Notes')
 @section('content')
 
 <!-- UNDER MAINTANCE -->

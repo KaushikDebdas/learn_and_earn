@@ -21,7 +21,7 @@ class LoginSignupController extends Controller
 
         if (!empty($user)) {
             $request->session()->put('id', $user->ID);
-            $request->session()->put('username', $user->FullName);
+            $request->session()->put('username', $user->UserName);
             $request->session()->put('email', $user->Email);
             $request->session()->put('gender', $user->Gender);
             $request->session()->put('phone', $user->PhoneNumber);
@@ -31,8 +31,10 @@ class LoginSignupController extends Controller
             $request->session()->put('avgrating', $user->AverageRating);
             
             $username = $request->session()->get('username');
+            // $id = $request->session()->get('id');
+            // return view('index', compact('username','id'));
             return view('index', compact('username'));
-        }
+        } 
         $msg = "Login Failed";
         return view('login',compact('msg'));
         
@@ -41,7 +43,7 @@ class LoginSignupController extends Controller
 
     // Register
     public function Register(Request $request) {
-        $fullname = $request->Fullname;
+        $UserName = $request->UserName;
         $pnum= $request->Pnum;
         $email = $request->Email;
         $pass = md5($request->Password);
@@ -52,7 +54,7 @@ class LoginSignupController extends Controller
 
         $user = new User();
         $user->Email = $email;
-        $user->Fullname = $fullname;
+        $user->UserName = $UserName;
         $user->Gender = $gender;
         $user->PhoneNumber = $pnum;
         if($request->hasfile('profile_image'))
@@ -69,7 +71,7 @@ class LoginSignupController extends Controller
         $user->AverageRating = 0;
         $user->save();
 
-        $request->session()->put('username', $user->Fullname);
+        $request->session()->put('username', $user->UserName);
         $request->session()->put('gender', $user->Gender);
         $request->session()->put('phone', $user->PhoneNumber);
         $request->session()->put('image', $user->Image);

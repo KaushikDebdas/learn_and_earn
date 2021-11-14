@@ -1,5 +1,7 @@
 @extends('welcome')
 
+@section('title','Profile')
+
 @section('content')
 
 {{-- Personal Information Start --}}
@@ -25,24 +27,22 @@
                 </div>
             </div>
             <!-- End Dashboard Side column -->
-            <div class="col-md-5 mt-5 " style="">
+            <div class="col-md-8 mt-5 " style="">
                 <div class="card bg-white ">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-5">
+                            <div class="col-md-4 col-lg-4">
                                 <img class="profile-img" src=" upload_images/{{ Session::get('image') }}" alt="{{ Session::get('username') }}" >
                             </div>
-                            <div class="col-md-7">
+                            <div class="col-md-8 col-lg-8">
                               <ul class="profile-details">
                                   <li>Name : {{  Session::get('username') }}</li>
                                   <li>ID : {{  Session::get('id') }}</li>
                                   <li>Phone Number: {{  Session::get('phone') }}</li>
                                   <li>Department : CSE</li>
-                                  <li>START DATE : {{  Session::get('sdate') }}</li>
-                                  <li>BALANCE : 50,000 TK</li>
+                                  <li>START DATE : {{  date('M j, Y ', strtotime(Session::get('sdate'))) }}</li>
+                                  {{-- <li>BALANCE : 50,000 TK</li> --}}
                                   <li>TUTOR RATING : 4.5</li>
-                                  <li>TAKEN TUITION COUNT :</li>
-                                  <li>GIVEN TUITION COUNT :</li>
                               </ul>
                             </div>
                         </div>

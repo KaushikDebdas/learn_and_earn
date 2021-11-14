@@ -1,5 +1,5 @@
 @extends('welcome')
-
+@section('title','Find Tutor')
 @section('content')
 
 <!-- Create Post Title -->
