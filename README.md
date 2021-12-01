@@ -1,5 +1,5 @@
 # learn_and_earn
-
+ A web-based intelligent platform for personal tutor and consultation. From recent circumstances, we can see The online teaching approach is getting increasingly popular. On our websites, students can not only teach online but also they can go offline. as in they can contact the tutor and can arrange a meetup physically. Students will be able to earn money by spending their spare time through this website. community-based searching. Using this online application, students will be able to share their expertise. And then they can search according to their schools. Colleges, universities, departments, and courses however they need. This project will result in the development of a fully working web application that will make it easier for students and teachers to engage with one another. Students can find their expected tutors. That is, people can look for tutors based on their requirements. Students can compare tutors.
 ## Screenshots
 ### LOGIN
 ![login](https://user-images.githubusercontent.com/67013658/144204162-2ce058e4-b756-44ec-808f-087f20583617.png)
