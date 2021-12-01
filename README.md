@@ -1,11 +1,30 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# learn_and_earn
+A web-based intelligent platform for personal tutor and consultation. From recent circumstances, we can see The online teaching approach is getting increasingly popular. On our websites, students can not only teach online but also they can go offline. as in they can contact the tutor and can arrange a meetup physically. Students will be able to earn money by spending their spare time through this website. community-based searching. Using this online application, students will be able to share their expertise. And then they can search according to their schools. Colleges, universities, departments, and courses however they need. This project will result in the development of a fully working web application that will make it easier for students and teachers to engage with one another. Students can find their expected tutors. That is, people can look for tutors based on their requirements. Students can compare tutors.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+# Live Preview
+http://learnandearn.epizy.com/
+
+## Screenshots
+### LOGIN
+![login](https://user-images.githubusercontent.com/67013658/144204162-2ce058e4-b756-44ec-808f-087f20583617.png)
+
+### HOME
+![home](https://user-images.githubusercontent.com/67013658/144204261-e9a53f8f-58df-42cd-80c9-6397abcc51c7.png)
+
+### Create Group Study
+![groupstudy create](https://user-images.githubusercontent.com/67013658/144204354-b46c4261-fe73-42d1-98e9-46a1ff8c0267.png)
+
+### Find All Group Study
+![groupstudy posts](https://user-images.githubusercontent.com/67013658/144204422-c36b05de-e50b-4d42-bde1-dcf38d5e9364.png)
+
+### Find Tutor
+![tutor find](https://user-images.githubusercontent.com/67013658/144204517-3a2ee0a8-bda7-48e3-867d-5c38f18f8978.png)
+
+### Find Tutor's Post
+![tutor posts](https://user-images.githubusercontent.com/67013658/144204558-0b83e81d-763b-4a3d-a9a2-8b2f8e93ba0e.png)
+
+### Profile
+![profile](https://user-images.githubusercontent.com/67013658/144204590-0650fe05-0d4d-4343-bfc6-05e84facf97d.png)
 
 ## About Laravel
 
@@ -76,4 +95,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# learn_and_earn
+
