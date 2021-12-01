@@ -29,7 +29,7 @@
                         <div class="row">
                             <div class="col-md-12">
                               @foreach ($item_post as $row)
-                              <p class="time">11:00AM</p>
+                              <p class="time">{{ date('h:ia', strtotime($row->PostDateTime)) }}</p>
 
                               <ul class="profile-details confirmed_tution_details-inline">
                                   <li>Gender: <span class="data-highlighted">{{ $row->Gender }}</span> </li>
