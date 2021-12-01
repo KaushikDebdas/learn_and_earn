@@ -4,6 +4,13 @@ A web-based intelligent platform for personal tutor and consultation. From recen
 # Live Preview
 http://learnandearn.epizy.com/
 
+# How To Run
+1. Install xampp.
+2. Import/Clone this project folder in htdocs.
+3. Import DB which is save in learn_and_earn->learn_and_earn.sql
+4. write command php artisan serve
+5. Run with local server
+
 ## Screenshots
 ### LOGIN
 ![login](https://user-images.githubusercontent.com/67013658/144204162-2ce058e4-b756-44ec-808f-087f20583617.png)
