@@ -1,3 +1,27 @@
+# learn_and_earn
+
+## Screenshots
+### LOGIN
+![login](https://user-images.githubusercontent.com/67013658/144204162-2ce058e4-b756-44ec-808f-087f20583617.png)
+
+### HOME
+![home](https://user-images.githubusercontent.com/67013658/144204261-e9a53f8f-58df-42cd-80c9-6397abcc51c7.png)
+
+### Create Group Study
+![groupstudy create](https://user-images.githubusercontent.com/67013658/144204354-b46c4261-fe73-42d1-98e9-46a1ff8c0267.png)
+
+### Find All Group Study
+![groupstudy posts](https://user-images.githubusercontent.com/67013658/144204422-c36b05de-e50b-4d42-bde1-dcf38d5e9364.png)
+
+### Find Tutor
+![tutor find](https://user-images.githubusercontent.com/67013658/144204517-3a2ee0a8-bda7-48e3-867d-5c38f18f8978.png)
+
+### Find Tutor's Post
+![tutor posts](https://user-images.githubusercontent.com/67013658/144204558-0b83e81d-763b-4a3d-a9a2-8b2f8e93ba0e.png)
+
+### Profile
+![profile](https://user-images.githubusercontent.com/67013658/144204590-0650fe05-0d4d-4343-bfc6-05e84facf97d.png)
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
@@ -67,4 +91,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# learn_and_earn
+
